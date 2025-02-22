@@ -1,0 +1,1126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/****VARIABLES******VARIABLES******VARIABLES******VARIABLES******VARIABLES******/
+/****VARIABLES******VARIABLES******VARIABLES******VARIABLES******VARIABLES******/
+
+:root{
+    --font-cabecera:rgb(248, 252, 252);
+    --color-redes:white;
+    --color-blanco:white;
+    --color-active:rgb(177, 144, 144);
+    --color-hover:black;
+    --color-fontbarra:white;
+    --color-article: rgb(84, 97, 90);
+    --color-header: rgb(13, 114, 119);
+    --color-nav: rgb(7, 87, 94);
+    --color-main:rgb(249, 250, 250);
+    --color-aside: rgb(13, 114, 119);
+    --color-footer: rgb(7, 87, 94);
+    --color-fontfooter: white;
+    /*linear-gradient(to left, rgb(13, 67, 67), rgb(28, 90, 97));*/
+    /*linear-gradient(to left, rgb(13, 67, 67), rgb(29, 84, 90));*/
+}
+
+/****ESTILOS COMUNES******ESTILOS COMUNES******ESTILOS COMUNES******ESTILOS COMUNES******/
+
+header{
+    grid-area: my-header;
+    background: var(--color-header);
+}
+
+nav{
+    grid-area: my-nav;
+    background-color: var(--color-nav);
+}
+
+main{
+    grid-area: my-main;
+    background-color: var(--color-main);
+}
+
+aside{
+    grid-area: my-aside;
+    background-color: var(--color-aside);
+}
+
+footer{
+    grid-area: my-footer;
+    background: var(--color-footer);
+    color: var(--color-fontfooter);
+}
+
+/****ESTRUCTURA MOVIL******ESTRUCTURA MOVIL******ESTRUCTURA MOVIL******ESTRUCTURA MOVIL******/
+/****ESTRUCTURA MOVIL******ESTRUCTURA MOVIL******ESTRUCTURA MOVIL******ESTRUCTURA MOVIL******/
+
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "my-header my-header my-header"
+    "my-nav my-nav my-nav"
+    "my-main my-main mi-main"
+    "my-aside my-aside my-aside"
+    "my-footer my-footer my-footer";
+    grid-template-rows: 150px auto auto auto 50px;
+    grid-template-columns: 100%;
+}
+
+/************************* HEADER MOVIL*********************************/
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--font-cabecera);  
+}
+
+.logo {
+    margin: 0 auto;
+    width: 180px;
+    height: 120px;
+}
+
+h1{
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: white;
+}
+
+.imagen-portada{
+    margin: 3px 0 0 0;
+    width: 100%;
+    height: 300px;
+}
+/************************* BARRA MOVIL*********************************/
+nav ul{
+   display: flex;
+   flex-direction: column;
+   list-style: none;
+}
+
+nav ul li a{
+    padding: 15px;
+    text-decoration: none;
+    color: var(--color-fontbarra);
+    line-height: 30px;
+}
+
+.active{
+    color: var(--color-active)
+}
+
+nav ul li a:hover{
+    color: var(--color-hover);
+}
+
+/*.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 64px;
+    background-color:var(--color-nav);
+    
+    position: relative;
+}
+
+.nav-links{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.nav-links li{
+    margin-left: 24px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 8px 24px;
+    border-radius: 30px;
+    
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover{
+    color: #1ee9d8;
+}
+
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-icon .line{
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+@media(max-width: 492px){
+    .navbar{
+        padding: 16px;
+    }
+    .menu-icon{
+        display: flex;
+    }
+
+    .nav-links{
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        background-color: #424242;
+        text-align: center;
+        transition: heigth 0.5s ease;
+    }
+
+    .nav-links li{
+        margin: 0;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    .nav-links a{
+        width: 100%;
+        padding: 5px 20px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links{
+        height: 100vh;
+    }
+
+    #menu-toggle:checked+.menu-icon .line:nth-child(1){
+        transform: rotate(45deg) translate(15px,3px);
+    }
+
+    #menu-toggle:checked+.menu-icon .line:nth-child(2){
+        transform: scale(0);
+    }
+
+    #menu-toggle:checked+.menu-icon .line:nth-child(3){
+        transform: rotate(-45deg) translate(15px,-4px);
+    }
+}*/
+/************************* MAIN MOVIL*********************************/
+section article{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color:var(--color-blanco);
+    text-align: justify;
+    color: var(--color-article);
+    border-left: 2px solid rgb(53, 95, 93);
+    border-bottom: 3px solid rgb(53, 95, 93);
+}
+
+section article a{
+    text-decoration: none;
+    color: rgb(224, 40, 40);
+}
+
+.foto{
+    display: none;
+}
+
+.imagen p{
+    padding: 5px;
+    word-spacing: 1px;
+}
+
+.img200{
+    display: block;
+    float: left;
+    padding: 5px 10px 0 0;
+    float: left;
+    width: 170px;
+    height: 125px;
+    border-radius: 5px;
+}
+
+.img201{
+    display: none;
+}
+
+.texto img{
+    display: none;
+}
+
+.img300{
+    display: none;
+}
+
+.img301{
+    display: none;
+}
+
+/************************* ASIDE MOVIL*********************************/
+aside {
+     padding: 15px;   
+}
+
+.submenu{
+    margin:0;
+    border-bottom: 3px solid white;
+}
+
+h2{
+    text-align: right;
+    padding: 0 0 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    color: rgb(23, 107, 118);
+}
+
+aside ul{
+    list-style: none;
+}
+
+aside ul li a{
+    text-decoration: none;
+    color: var(--color-fontbarra);
+    line-height: 30px;
+}
+
+aside ul li a:hover{
+    color:var(--color-hover);
+}
+
+.publi h2{
+    padding: 10px;
+    color:white;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.anuncio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.fotopublicidad {
+    display: block;
+    margin: 0 auto;
+    padding: 15px;  
+}
+
+.anuncio img{
+    border-radius: 20px;
+    width: 180px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+/************************* GALERIA *********************************/
+.formato{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px auto;
+}
+
+.formato img{
+    display: block;
+    margin: 5px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+/************************* REDES SOCIALES **************************/
+.redesociales {
+    margin: 0 auto;
+    padding: 10px;
+    
+}
+        .bi{
+            font-size: 24px;
+            color:var(--color-redes);
+            margin: 0 10px 0 0;
+        }
+
+        .bi-facebook{
+            color:var(--color-redes);
+        }
+
+        .bi-twitter-x{
+            color:var(--color-redes);
+        }
+
+        .bi-whatsapp{
+            color:var(--color-redes);
+        }
+
+        .bi-instagram{
+            color:var(--color-redes);
+        }
+        .bi-google{
+            color:var(--color-redes);
+        }
+
+        .bi-filetype-md{
+            color:var(--color-redes);
+        }
+
+/************************* FORMULARIO MOVIL ****************************/
+.containerr{
+    width: 75%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.flex-outer{
+max-width: 600px;
+margin: 0 auto;
+}
+
+.flex-outer li, .flex-inner{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.flex-inner{
+padding: 0 8px;
+justify-content: space-between;
+}
+
+.flex-outer > li:not(:last-child){
+margin-bottom: 15px;
+}
+
+.flex-outer li label, .flex-outer li p{
+padding: 8px;
+font-weight: 250;
+letter-spacing: .03em;
+text-transform: none;
+/* text-transform: uppercase;*/ /*poner texto en mayusculas*/
+}
+
+.flex-outer >li >label+*, .flex-inner{
+    flex: 1 0 220px;
+    /*color caja de texto formulario */
+    background: rgb(181, 196, 200); 
+}
+
+.flex-outer >li >label, .flex-outer li p{
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.flex-outer li p{
+    margin: 0;
+}
+
+.flex-outer li input:not([type='radio']), .flex-outer li textarea{
+    padding: 15px;
+    border: none;
+}
+
+.flex-outer .libutton button{
+    margin-left: auto;
+    padding: 8px 16px;
+    color: black;
+    background: none;
+    text-transform: none;
+    letter-spacing: 0.1em;
+    border: none;
+}
+
+.flex-outer .libutton{
+    display: flex;
+    align-items: center;
+}
+
+/************************* FOOTER MOVIL*****************************/
+footer{
+    padding: 10px;
+    text-align: center;
+}
+
+/****ESTRUCTURA TABLET******ESTRUCTURA TABLET******ESTRUCTURA TABLET******ESTRUCTURA TABLET******/
+/****ESTRUCTURA TABLET******ESTRUCTURA TABLET******ESTRUCTURA TABLET******ESTRUCTURA TABLET******/
+@media (min-width:493px) and (max-width:1024px){
+    
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-areas: 
+        "my-header my-header my-header"
+        "my-nav my-nav my-nav"
+        "my-aside my-main my-main"
+        "my-footer my-footer my-footer";
+        grid-template-rows: 150px 50px auto auto 50px;
+        grid-template-columns: 320px auto auto;
+    }
+ 
+    header{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 5px 15px;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav ul li a{
+        padding: 5px 10px;
+        text-decoration: none;
+        list-style: none;
+        color: var(--color-fontbarra);
+        line-height: 50px;
+    }
+    
+    nav ul li a:hover{
+        color:var(--color-hover);
+    }
+
+    section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;      
+    }
+
+    section article{
+        margin: 5px auto;
+        padding: 5px;
+        width:49% ;
+    }
+
+    section article p{
+        margin: 0 ;
+        padding: 0;
+    }
+
+    .submenu{
+        display: block;
+    }
+
+    .submenu ul{
+        padding: 15px;
+    }
+
+    .imagen p{
+        padding: 5px;
+    }
+
+    .img200{
+        display: block;
+        float: left;
+        padding: 10px;
+        float: left;
+        width: 150px;
+        height: 110px;
+        border-radius: 10px;
+    }
+
+    .img201{
+        display: block;
+        float: left;
+        padding: 10px;
+        float: left;
+        width: 130px;
+        height: 130px;
+        border-radius: 20px;
+    }
+
+    section .caja {
+        width: 47%;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .texto img{
+        display: block;
+        width: 164px;
+        height: 190px;
+        margin:0 15px 0 0;
+        float: left;
+        border-radius: 5px;
+    }
+
+ /************************* ESTILOS GALERIA *************************/
+    .formato{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 10px auto;
+    }
+
+    .formato img{
+        display: block;
+        margin: 5px auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+    }
+        
+    .imagen1 .img300{
+        display: block;
+        margin: 0 auto;
+        width: 240px;
+        height: 200px;
+        border-radius: 5px;
+    }
+    
+    aside .foto{
+        display: block;
+        margin: 0 auto;
+        width: 280px;
+        height: 200px;  
+        border-radius: 5px;
+    }
+
+    aside ul li{
+        list-style: none;
+    }
+
+    .publi h2{
+        padding: 10px;
+        color:white;
+        font-family: sans-serif;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 100;
+    }
+
+    .anuncio{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .fotopublicidad {
+        display: block;
+        margin: 0 auto;
+        padding: 5px;  
+    }
+
+    .anuncio img{
+        border-radius: 10px;
+        width: 140px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+ /******************** IMAGENES Y TEXTO EVENTOS ************************/
+    .img301{
+        display: block;
+        float: left;
+        margin: 8px;
+        border-radius: 5px;
+    }
+
+    .texto1{
+        margin: 5px auto;
+        padding: 0 8px;
+    }
+
+    .tamano{
+        margin: 10px auto;
+        width:100% ;
+    }
+
+    .imgproy{
+        display: block;
+        width: 250px;
+        height: 200px;
+    }
+    
+    .imagen img{
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+ /************************ REDES SOCIALES **********************************/
+    .redesociales{
+        margin: 5px 5px;
+    }
+            .bi{
+                font-size: 24px;
+                color: var(--color-redes);
+                margin-left: 5px;
+            }
+
+            .bi-facebook{
+                color:var(--color-redes);
+            }
+
+            .bi-twitter-x{
+                color:var(--color-redes);
+            }
+
+            .bi-whatsapp{
+                color:var(--color-redes);
+            }
+
+            .bi-instagram{
+                color:var(--color-redes);
+            }
+
+            .bi-google{
+                color:var(--color-redes);
+            }
+
+            .bi-filetype-md{
+                color:var(--color-redes);
+            }
+
+
+ /********************* FORMULARIO TABLET ***************************************/
+    .containerr{
+        width: 75%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .flex-outer{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .flex-outer li, .flex-inner{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .flex-inner{
+        padding: 0 8px;
+        justify-content: space-between;
+    }
+
+    .flex-outer > li:not(:last-child){
+        margin-bottom: 15px;
+    }
+
+    .flex-outer li label, .flex-outer li p{
+        padding: 8px;
+        font-weight: 250;
+        letter-spacing: .03em;
+        text-transform: none;
+    /* text-transform: uppercase;*/ /*poner texto en mayusculas*/
+    }
+
+    .flex-outer >li >label, .flex-outer li p{
+        flex: 1 0 120px;
+        max-width: 220px;
+    }
+
+    .flex-outer >li >label+*, .flex-inner{
+        flex: 1 0 220px; 
+    }
+
+    .flex-outer li p{
+        margin: 0;
+    }
+
+    .flex-outer li input:not([type='radio']), .flex-outer li textarea{
+        padding: 15px;
+        border: none;
+    }
+
+    .flex-outer .libutton button{
+        margin-left: auto;
+        padding: 8px 16px;
+        color: black;
+        background: none;
+        text-transform: none;
+        letter-spacing: 0.1em;
+    }
+
+    .flex-outer .libutton{
+        border: none;
+        display: flex;
+        flex: wrap;
+        align-items: center;
+    }
+}
+
+/*******************************************************************/
+/******** ESTRUCTURA PANTALLA GRANDE********************************/
+/*******************************************************************/
+/*******************************************************************/
+
+@media (min-width:1025px) and (max-width:1920px){ 
+    
+    body{
+        margin: auto;
+        min-height: 100vh;
+        display: grid;
+        grid-template-areas: 
+        "my-header my-header my-header"
+        "my-nav my-nav my-nav"
+        "my-main my-main my-aside"
+        "my-footer my-footer my-footer";
+        grid-template-rows: 150px 50px 1fr 50px;
+        grid-template-columns: auto 1fr 390px;
+    }
+
+    header{
+        display: flex;
+        padding: 5px 15px;
+    }
+
+    h1{
+        font-size: 14px;
+        font-family: sans-serif;
+        font-weight: 100;
+        color: white;
+    }
+
+    nav ul{
+          display: flex;
+          flex-direction: row;
+    }
+  
+    nav ul li a{
+        padding: 5px 10px;
+        text-decoration: none;
+        list-style: none;
+        color:var(--color-fontbarra);
+        line-height: 50px;
+    }
+      
+    nav ul li a:hover{
+        color:var(--color-hover);
+    }
+
+    main{
+        display: block;
+    }
+
+    section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;      
+    }
+
+    section article{
+        width:48%;
+        color:rgb(110, 115, 119);
+        margin: 10px 0px 15px 15px;
+        padding: 10px;
+        border-left: 2px solid rgb(53, 95, 93);
+        background: none;
+    }
+
+    article h2{
+        font-family: sans-serif;
+        padding: 5px;
+        text-align: left;
+        background: rgb(251, 251, 251);
+        color: rgb(50, 85, 76);
+        font-weight: 100;
+        letter-spacing: 0.5px;
+   }
+
+    article .img200 {
+        display: block;
+        float: left;
+        border-radius: 10px;
+        margin: 5px 0 0 0 ;
+        padding: 10px 10px 0 10px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .imagen p{
+        margin:12px auto;
+    }
+ 
+    section article a{
+        text-decoration: none;
+        color:rgb(192, 36, 36);
+    }
+
+    aside .foto{
+        display: block;
+        margin: 10px auto;
+        width: 300px;
+        height: 200px;  
+        border-radius: 5px;
+    }
+    
+    .submenu{
+        display: block;
+    }
+
+    .submenu ul{
+        padding: 15px;
+    }
+        
+    aside ul li{
+        list-style: none;
+    }
+
+    .publi h2{
+        padding: 10px;
+        color:white;
+        font-family: sans-serif;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 100;
+    }
+
+    .anuncio{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+
+    .fotopublicidad {
+        display: block;
+        margin: 0 auto;
+        padding: 15px;  
+    }
+
+    .anuncio img{
+        border-radius: 20px;
+        width: 180px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    section .caja {
+        width: 48%;
+        margin: 5px auto;
+        padding: 5px;
+    }
+
+    .texto h2{
+        margin: 20px;
+    }
+
+    .texto img{
+        display: block;
+        float: left;
+        border-radius: 10px;
+        margin: 10px 0 0 0 ;
+        padding: 0px 10px;
+        width: 300px;
+        height: 200px;
+    } 
+
+    .texto1{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    
+    .texto1 img{
+        width: 400px;
+        height: 300px;
+        display: block;
+        padding: 20px;
+        border-radius: 10px;
+    } 
+
+    .caja p{
+        margin: 5px auto;
+    }
+
+    article .img201 {
+        display: block;
+        float: left;
+        border-radius: 10px;
+        margin: 30px 0 0 0 ;
+        padding: 0px 10px;
+        width: 300px;
+        height: 200px;
+    }
+    
+    .imagen1 .img301{
+        display: block;
+        float: left;
+        margin: 0 auto;
+        border-radius: 5px;
+        width: 300px;
+        height: 200px;
+    }
+        
+    .imagen1 .img300{
+        display: block;
+        float: left;
+        margin:0 auto;
+        width: 250px;
+        height: 200px;
+        border-radius: 23px;
+        padding: 15px;
+    }
+
+    .texto1 p{
+        margin: 0 auto;
+    }
+
+    p{
+        margin: 5px 0 0 0 ;
+        padding: 0px 10px;
+    }
+
+ /********************* ESTILOS GALERIA *****************************/
+    .formato{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 5px auto;
+    }
+
+    .formato img{
+        display: block;
+        margin: 5px auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+    }
+
+ /******************* REDES SOCIALES ********************************/
+ /*******************************************************************/
+    .redesociales{
+        margin: 10px auto;
+        padding: 5px;
+    }
+
+    .bi{
+        font-size: 24px;
+        color: var(--color-redes);
+        margin-left: 5px;
+    }
+
+    .bi-facebook{
+        color:var(--color-redes);
+    }
+
+    .bi-twitter-x{
+        color:var(--color-redes);
+    }
+
+    .bi-whatsapp{
+        color:var(--color-redes);
+    }
+
+    .bi-instagram{
+        color:var(--color-redes);
+    }
+
+    .bi-google{
+        color:var(--color-redes);
+    }
+
+    .bi-filetype-md{
+        color:var(--color-redes);
+    }
+
+ /********************** FORMULARIO ***************************************/
+    .containerr{
+        width: 80%;
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+    
+    .flex-outer{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+        
+    .flex-outer li, .flex-inner{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+        
+    .flex-inner{
+        padding: 0 8px;
+        justify-content: space-between;
+    }
+        
+    .flex-outer > li:not(:last-child){
+        margin-bottom: 15px;
+    }
+        
+    .flex-outer li label, .flex-outer li p{
+        padding: 8px;
+        font-weight: 250;
+        letter-spacing: .03em;
+        text-transform: none;
+    }
+    
+    .flex-outer >li >label, .flex-outer li p{
+        flex: 1 0 120px;
+        max-width: 220px;
+    }
+        
+    .flex-outer >li >label+*, .flex-inner{
+        flex: 1 0 220px;
+        /*color caja de texto formulario */
+        background: rgb(181, 196, 200); 
+    }
+        
+    .flex-outer li p{
+        margin: 0;
+    }
+        
+    .flex-outer li input:not([type='radio']), .flex-outer li textarea{
+        padding: 15px;
+        border: none;
+    }
+        
+    .flex-outer .libutton button{
+        margin-left: auto;
+        padding: 8px 16px;
+        color: black;
+        background: none;
+        text-transform: none;
+        letter-spacing: 0.1em;
+    }
+    
+    .flex-outer .libutton{
+        border: none;
+        display: flex;
+        flex: wrap;
+        align-items: center;
+    }
+}
+      
